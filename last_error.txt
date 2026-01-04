@@ -1,0 +1,1 @@
+Write operation error on server localhost:27017. Write error: WriteError{code=13297, message='db already exists with different case already have: [Nivesha] trying to create [nivesha]', details={}}.

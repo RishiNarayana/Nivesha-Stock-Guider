@@ -1,0 +1,51 @@
+### How to Run Nivesha.ai Platform
+
+The project contains 4 microservices:
+1.  **Frontend** (React + Vite)
+2.  **Spring Boot Backend** (Core Logic + SQL)
+3.  **Python ML Engine** (Stock Prediction)
+4.  **Node.js AI Gateway** (OpenAI Wrapper)
+
+### Quick Start (Recommended)
+We have a PowerShell automation script that launches everything in separate windows.
+Run this from the project root:
+```powershell
+.\start_all.ps1
+```
+
+### Manual Start
+If you prefer to run services manually, open 4 separate terminals:
+
+**1. Python ML Engine (Port 8000)**
+```powershell
+cd backend-python-ml
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+**2. Node.js AI Gateway (Port 5000)**
+```powershell
+cd backend-node-ai
+npm install
+node index.js
+```
+*Note: Ensure .env has OPENAI_API_KEY*
+
+**3. Spring Boot Backend (Port 8080)**
+```powershell
+cd backend-springboot
+./mvnw spring-boot:run
+```
+
+**4. Frontend (Port 5173)**
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+### Access Points
+- **Frontend UI:** [http://localhost:5173](http://localhost:5173)
+- **Core API:** [http://localhost:8080](http://localhost:8080)
+- **ML Engine:** [http://localhost:8000](http://localhost:8000)
+- **AI Gateway:** [http://localhost:5000](http://localhost:5000)
